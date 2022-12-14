@@ -1,0 +1,70 @@
+syntax = "proto3";
+
+service Book {
+  rpc GetBook (GetBookRequest) returns (GetBookResponse) {}
+  rpc CreateBook (CreateBookRequest) returns (CreateBookResponse) {}
+}
+
+service Inventory {
+  rpc GetInventory (GetInventoryRequest) returns (GetBookResponse) {}
+}
+
+enum Genre {
+  UNDEFINED = 0;
+  SCIFI = 1;
+  FANTASY = 2;
+  HORROR = 3;
+  MYSTERY = 4;
+}
+
+message GetBookRequest {
+  string isbn = 1;
+}
+
+message GetBookResponse {
+  bool found = 1;
+  string message = 2;
+  BookInfo bookInfo = 3;
+}
+
+message CreateBookRequest {
+  string isbn = 1;
+  string title = 2;
+  string author = 3;
+  Genre genre = 4;
+  int32 publishingYear = 5;
+}
+
+message CreateBookResponse {
+  bool created = 1;
+  string message = 2;
+}
+
+message BookInfo {
+  string isbn = 1;
+  string title = 2;
+  string author = 3;
+  Genre genre = 4;
+  int32 publishingYear = 5;
+}
+
+message GetInventoryRequest {
+  int32 inventoryNumber = 1;
+}
+
+message GetInventoryResponse {
+  bool found = 1;
+  string message = 2;
+  InventoryItem inventoryItem = 3;
+}
+
+message InventoryItem {
+  int32 inventoryNumber = 1;
+  oneof Item {
+    BookInfo book = 2;
+  }
+  enum status {
+    TAKEN = 0;
+    AVAILABLE = 1;
+  }
+}
