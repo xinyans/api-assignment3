@@ -18,6 +18,7 @@ class Book:
         self.pub_year = pub_year
 
 
+# The book is stored by a python dictionary
 class BookDB:
     def __init__(self):
         self.db = {
@@ -30,6 +31,7 @@ class BookDB:
     def get_book_by_isbn(self, isbn):
         return self.db.get(isbn, None)
 
+    # Does not add book when book already exists
     def add_book(self, book):
         if not book.isbn:
             return
@@ -37,6 +39,7 @@ class BookDB:
             return
         self.replace_book(book)
 
+    # Replaces the book with given information no matter what
     def replace_book(self, book):
         if not book.isbn:
             return
