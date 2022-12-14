@@ -1,5 +1,7 @@
 syntax = "proto3";
 
+package project;
+
 service Book {
   rpc GetBook (GetBookRequest) returns (GetBookResponse) {}
   rpc CreateBook (CreateBookRequest) returns (CreateBookResponse) {}
