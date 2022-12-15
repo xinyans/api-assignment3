@@ -13,35 +13,35 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\nbook.proto\"\x1e\n\x0eGetBookRequest\x12\x0c\n\x04isbn\x18\x01 \x01(\t\"N\n\x0fGetBookResponse\x12\r\n\x05\x66ound\x18\x01 \x01(\x08\x12\x0f\n\x07message\x18\x02 \x01(\t\x12\x1b\n\x08\x62ookInfo\x18\x03 \x01(\x0b\x32\t.BookInfo\"o\n\x11\x43reateBookRequest\x12\x0c\n\x04isbn\x18\x01 \x01(\t\x12\r\n\x05title\x18\x02 \x01(\t\x12\x0e\n\x06\x61uthor\x18\x03 \x01(\t\x12\x15\n\x05genre\x18\x04 \x01(\x0e\x32\x06.Genre\x12\x16\n\x0epublishingYear\x18\x05 \x01(\x05\"6\n\x12\x43reateBookResponse\x12\x0f\n\x07\x63reated\x18\x01 \x01(\x08\x12\x0f\n\x07message\x18\x02 \x01(\t\"f\n\x08\x42ookInfo\x12\x0c\n\x04isbn\x18\x01 \x01(\t\x12\r\n\x05title\x18\x02 \x01(\t\x12\x0e\n\x06\x61uthor\x18\x03 \x01(\t\x12\x15\n\x05genre\x18\x04 \x01(\x0e\x32\x06.Genre\x12\x16\n\x0epublishingYear\x18\x05 \x01(\x05\".\n\x13GetInventoryRequest\x12\x17\n\x0finventoryNumber\x18\x01 \x01(\x05\"]\n\x14GetInventoryResponse\x12\r\n\x05\x66ound\x18\x01 \x01(\x08\x12\x0f\n\x07message\x18\x02 \x01(\t\x12%\n\rinventoryItem\x18\x03 \x01(\x0b\x32\x0e.InventoryItem\"o\n\rInventoryItem\x12\x17\n\x0finventoryNumber\x18\x01 \x01(\x05\x12\x19\n\x04\x62ook\x18\x02 \x01(\x0b\x32\t.BookInfoH\x00\"\"\n\x06status\x12\t\n\x05TAKEN\x10\x00\x12\r\n\tAVAILABLE\x10\x01\x42\x06\n\x04Item*G\n\x05Genre\x12\r\n\tUNDEFINED\x10\x00\x12\t\n\x05SCIFI\x10\x01\x12\x0b\n\x07\x46\x41NTASY\x10\x02\x12\n\n\x06HORROR\x10\x03\x12\x0b\n\x07MYSTERY\x10\x04\x32o\n\x04\x42ook\x12.\n\x07GetBook\x12\x0f.GetBookRequest\x1a\x10.GetBookResponse\"\x00\x12\x37\n\nCreateBook\x12\x12.CreateBookRequest\x1a\x13.CreateBookResponse\"\x00\x32\x45\n\tInventory\x12\x38\n\x0cGetInventory\x12\x14.GetInventoryRequest\x1a\x10.GetBookResponse\"\x00\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\nbook.proto\x12\x07project\"\x1e\n\x0eGetBookRequest\x12\x0c\n\x04isbn\x18\x01 \x01(\t\"V\n\x0fGetBookResponse\x12\r\n\x05\x66ound\x18\x01 \x01(\x08\x12\x0f\n\x07message\x18\x02 \x01(\t\x12#\n\x08\x62ookInfo\x18\x03 \x01(\x0b\x32\x11.project.BookInfo\"w\n\x11\x43reateBookRequest\x12\x0c\n\x04isbn\x18\x01 \x01(\t\x12\r\n\x05title\x18\x02 \x01(\t\x12\x0e\n\x06\x61uthor\x18\x03 \x01(\t\x12\x1d\n\x05genre\x18\x04 \x01(\x0e\x32\x0e.project.Genre\x12\x16\n\x0epublishingYear\x18\x05 \x01(\x05\"6\n\x12\x43reateBookResponse\x12\x0f\n\x07\x63reated\x18\x01 \x01(\x08\x12\x0f\n\x07message\x18\x02 \x01(\t\"n\n\x08\x42ookInfo\x12\x0c\n\x04isbn\x18\x01 \x01(\t\x12\r\n\x05title\x18\x02 \x01(\t\x12\x0e\n\x06\x61uthor\x18\x03 \x01(\t\x12\x1d\n\x05genre\x18\x04 \x01(\x0e\x32\x0e.project.Genre\x12\x16\n\x0epublishingYear\x18\x05 \x01(\x05\".\n\x13GetInventoryRequest\x12\x17\n\x0finventoryNumber\x18\x01 \x01(\x05\"e\n\x14GetInventoryResponse\x12\r\n\x05\x66ound\x18\x01 \x01(\x08\x12\x0f\n\x07message\x18\x02 \x01(\t\x12-\n\rinventoryItem\x18\x03 \x01(\x0b\x32\x16.project.InventoryItem\"w\n\rInventoryItem\x12\x17\n\x0finventoryNumber\x18\x01 \x01(\x05\x12!\n\x04\x62ook\x18\x02 \x01(\x0b\x32\x11.project.BookInfoH\x00\"\"\n\x06status\x12\t\n\x05TAKEN\x10\x00\x12\r\n\tAVAILABLE\x10\x01\x42\x06\n\x04Item*G\n\x05Genre\x12\r\n\tUNDEFINED\x10\x00\x12\t\n\x05SCIFI\x10\x01\x12\x0b\n\x07\x46\x41NTASY\x10\x02\x12\n\n\x06HORROR\x10\x03\x12\x0b\n\x07MYSTERY\x10\x04\x32\x8f\x01\n\x04\x42ook\x12>\n\x07GetBook\x12\x17.project.GetBookRequest\x1a\x18.project.GetBookResponse\"\x00\x12G\n\nCreateBook\x12\x1a.project.CreateBookRequest\x1a\x1b.project.CreateBookResponse\"\x00\x32U\n\tInventory\x12H\n\x0cGetInventory\x12\x1c.project.GetInventoryRequest\x1a\x18.project.GetBookResponse\"\x00\x62\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'book_pb2', globals())
 if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
-  _GENRE._serialized_start=655
-  _GENRE._serialized_end=726
-  _GETBOOKREQUEST._serialized_start=14
-  _GETBOOKREQUEST._serialized_end=44
-  _GETBOOKRESPONSE._serialized_start=46
-  _GETBOOKRESPONSE._serialized_end=124
-  _CREATEBOOKREQUEST._serialized_start=126
-  _CREATEBOOKREQUEST._serialized_end=237
-  _CREATEBOOKRESPONSE._serialized_start=239
-  _CREATEBOOKRESPONSE._serialized_end=293
-  _BOOKINFO._serialized_start=295
-  _BOOKINFO._serialized_end=397
-  _GETINVENTORYREQUEST._serialized_start=399
-  _GETINVENTORYREQUEST._serialized_end=445
-  _GETINVENTORYRESPONSE._serialized_start=447
-  _GETINVENTORYRESPONSE._serialized_end=540
-  _INVENTORYITEM._serialized_start=542
-  _INVENTORYITEM._serialized_end=653
-  _INVENTORYITEM_STATUS._serialized_start=611
-  _INVENTORYITEM_STATUS._serialized_end=645
-  _BOOK._serialized_start=728
-  _BOOK._serialized_end=839
-  _INVENTORY._serialized_start=841
-  _INVENTORY._serialized_end=910
+  _GENRE._serialized_start=704
+  _GENRE._serialized_end=775
+  _GETBOOKREQUEST._serialized_start=23
+  _GETBOOKREQUEST._serialized_end=53
+  _GETBOOKRESPONSE._serialized_start=55
+  _GETBOOKRESPONSE._serialized_end=141
+  _CREATEBOOKREQUEST._serialized_start=143
+  _CREATEBOOKREQUEST._serialized_end=262
+  _CREATEBOOKRESPONSE._serialized_start=264
+  _CREATEBOOKRESPONSE._serialized_end=318
+  _BOOKINFO._serialized_start=320
+  _BOOKINFO._serialized_end=430
+  _GETINVENTORYREQUEST._serialized_start=432
+  _GETINVENTORYREQUEST._serialized_end=478
+  _GETINVENTORYRESPONSE._serialized_start=480
+  _GETINVENTORYRESPONSE._serialized_end=581
+  _INVENTORYITEM._serialized_start=583
+  _INVENTORYITEM._serialized_end=702
+  _INVENTORYITEM_STATUS._serialized_start=660
+  _INVENTORYITEM_STATUS._serialized_end=694
+  _BOOK._serialized_start=778
+  _BOOK._serialized_end=921
+  _INVENTORY._serialized_start=923
+  _INVENTORY._serialized_end=1008
 # @@protoc_insertion_point(module_scope)

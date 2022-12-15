@@ -15,12 +15,12 @@ class BookStub(object):
             channel: A grpc.Channel.
         """
         self.GetBook = channel.unary_unary(
-                '/Book/GetBook',
+                '/project.Book/GetBook',
                 request_serializer=book__pb2.GetBookRequest.SerializeToString,
                 response_deserializer=book__pb2.GetBookResponse.FromString,
                 )
         self.CreateBook = channel.unary_unary(
-                '/Book/CreateBook',
+                '/project.Book/CreateBook',
                 request_serializer=book__pb2.CreateBookRequest.SerializeToString,
                 response_deserializer=book__pb2.CreateBookResponse.FromString,
                 )
@@ -56,7 +56,7 @@ def add_BookServicer_to_server(servicer, server):
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'Book', rpc_method_handlers)
+            'project.Book', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
@@ -75,7 +75,7 @@ class Book(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/Book/GetBook',
+        return grpc.experimental.unary_unary(request, target, '/project.Book/GetBook',
             book__pb2.GetBookRequest.SerializeToString,
             book__pb2.GetBookResponse.FromString,
             options, channel_credentials,
@@ -92,7 +92,7 @@ class Book(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/Book/CreateBook',
+        return grpc.experimental.unary_unary(request, target, '/project.Book/CreateBook',
             book__pb2.CreateBookRequest.SerializeToString,
             book__pb2.CreateBookResponse.FromString,
             options, channel_credentials,
@@ -109,7 +109,7 @@ class InventoryStub(object):
             channel: A grpc.Channel.
         """
         self.GetInventory = channel.unary_unary(
-                '/Inventory/GetInventory',
+                '/project.Inventory/GetInventory',
                 request_serializer=book__pb2.GetInventoryRequest.SerializeToString,
                 response_deserializer=book__pb2.GetBookResponse.FromString,
                 )
@@ -134,7 +134,7 @@ def add_InventoryServicer_to_server(servicer, server):
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'Inventory', rpc_method_handlers)
+            'project.Inventory', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
@@ -153,7 +153,7 @@ class Inventory(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/Inventory/GetInventory',
+        return grpc.experimental.unary_unary(request, target, '/project.Inventory/GetInventory',
             book__pb2.GetInventoryRequest.SerializeToString,
             book__pb2.GetBookResponse.FromString,
             options, channel_credentials,

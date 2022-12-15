@@ -21,6 +21,7 @@ def genre_enum_to_proto_enum(genre):
     else:
         return None
 
+
 def proto_enum_to_genre_enum(genre):
     if genre == book_pb2.SCIFI:
         return Genre.SCIFI
@@ -36,7 +37,7 @@ def proto_enum_to_genre_enum(genre):
         return None
 
 
-class BookServer(book_pb2_grpc.BookServicer):
+class InventoryServer(book_pb2_grpc.BookServicer):
     def __init__(self):
         super().__init__()
         self.book_db = BookDB()
@@ -70,7 +71,7 @@ class BookServer(book_pb2_grpc.BookServicer):
 def serve():
     port = '50051'
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
-    book_pb2_grpc.add_BookServicer_to_server(BookServer(), server)
+    book_pb2_grpc.add_BookServicer_to_server(InventoryServer(), server)
     server.add_insecure_port('[::]:' + port)
     server.start()
     print("Server started, listening on " + port)
